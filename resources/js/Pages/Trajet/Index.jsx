@@ -233,8 +233,9 @@ export default function Index({ auth, trajets }) {
 
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 flex items-center">
                     <FaClock className="mr-2 text-green-500" />
-                    Départ : {trajet.departure_date.split("T")[0]} à {trajet.departure_time.slice(0, 5)}
-                    </p>
+                    Départ : {trajet.departure_date.split("T")[0]} à{" "}
+                    {trajet.departure_time.slice(0, 5)}
+                  </p>
 
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 flex items-center">
                     <FaUser className="mr-2 text-gray-500" />

@@ -2,7 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Message;
+
+use App\Models\Messages;
 use App\Models\Trajet;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -15,7 +16,7 @@ class MessageFactory extends Factory
     /**
      * Le modèle associé à la factory.
      */
-    protected $model = Message::class;
+    protected $model = Messages::class;
 
     /**
      * Définition de l'état par défaut du modèle.

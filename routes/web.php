@@ -35,7 +35,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Routes pour les autres ressources
     Route::resources([
         'posts' => PostsController::class,
-        'Message' => MessageController::class,
+        'messages' => MessageController::class,
         'users' => UserController::class, 
     ]);
 

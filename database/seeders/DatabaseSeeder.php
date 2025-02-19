@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Models\Trajet;
 use App\Models\Reviews;
 use App\Models\Posts;
-use App\Models\Message;
+use App\Models\Messages;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -29,6 +29,6 @@ class DatabaseSeeder extends Seeder
         Trajet::factory()->count(20)->create();
         Reviews::factory()->count(20)->create();
         Posts::factory()->count(20)->create();
-        Message::factory()->count(20)->create();
+        Messages::factory()->count(20)->create();
     }
 }

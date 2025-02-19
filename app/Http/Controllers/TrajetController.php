@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Trajet;
 use App\Models\TrajetRequest;
-use App\Models\Message;
 use App\Http\Requests\StoreTrajetRequest;
 use App\Http\Requests\UpdateTrajetRequest;
 use App\Http\Resources\TrajetResource;
+use App\Models\Messages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -127,7 +127,7 @@ class TrajetController extends Controller
         ]);
 
         // Envoyer un message automatique au créateur du trajet
-        Message::create([
+        Messages::create([
             'sender_id' => $user->id,
             'receiver_id' => $trajet->user_id,
             'content' => "Demande d'adhésion au trajet {$trajet->departure_station} → {$trajet->arrival_station}. Accepter ou rejeter ?",
@@ -165,7 +165,7 @@ class TrajetController extends Controller
             $trajetRequest->trajet->decrement('available_seats');
 
             // Notification de confirmation
-            Message::create([
+            Messages::create([
                 'sender_id' => $user->id,
                 'receiver_id' => $trajetRequest->user_id,
                 'content' => "Votre demande a été acceptée ! Vous pouvez maintenant discuter avec votre compagnon de voyage.",
@@ -174,7 +174,7 @@ class TrajetController extends Controller
         } else {
             $trajetRequest->update(['status' => 'rejected']);
 
-            Message::create([
+            Messages::create([
                 'sender_id' => $user->id,
                 'receiver_id' => $trajetRequest->user_id,
                 'content' => "Votre demande a été refusée.",
