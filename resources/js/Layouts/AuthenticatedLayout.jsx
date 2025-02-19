@@ -46,8 +46,8 @@ export default function AuthenticatedLayout({ header, children }) {
                   Publications
                 </NavLink>
                 <NavLink
-                  href={route("Message.index")}
-                  active={route().current("Message.index")}
+                  href={route("messages.index")}
+                  active={route().current("messages.index")}
                 >
                   Messagerie
                 </NavLink>
@@ -163,8 +163,8 @@ export default function AuthenticatedLayout({ header, children }) {
               Publications
             </ResponsiveNavLink>
             <ResponsiveNavLink
-              href={route("Message.index")}
-              active={route().current("Message.index")}
+              href={route("messages.index")}
+              active={route().current("messages.index")}
             >
               Messagerie
             </ResponsiveNavLink>

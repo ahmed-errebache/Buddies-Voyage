@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Message extends Model
+class Messages extends Model
 {
     use HasFactory;
 
@@ -37,6 +37,7 @@ class Message extends Model
         return $this->belongsTo(User::class, 'sender_id');
     }
 
+
     public function receiver()
     {
         return $this->belongsTo(User::class, 'receiver_id');
@@ -46,6 +47,7 @@ class Message extends Model
     {
         return $this->belongsTo(Trajet::class);
     }
+
 
     public function trajetRequest()
     {
@@ -60,4 +62,3 @@ class Message extends Model
         return $query->where('status', 'pending');
     }
 }
-    
